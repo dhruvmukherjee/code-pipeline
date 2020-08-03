@@ -17,6 +17,10 @@ Parameters:
     Description: Fleet configured in CodeDeploy
     Type: String
     Default: DemoFleet
+  ImageVersion:
+    Description: image version
+    Type: String
+    Default: "1.0.3"
 Resources:
   CodePipelineArtifactStoreBucket:
     Type: 'AWS::S3::Bucket'
@@ -58,7 +62,7 @@ Resources:
     Properties:
       Authentication: GITHUB_HMAC
       AuthenticationConfiguration:
-        SecretToken: 'a2607a30646c3bad9dd2559e6a16eaece69b73c3'
+        SecretToken: 'c8caf6fbcfbaa549ac80cfea77b8af5c2d84e117'
       Filters:
         - JsonPath: $.ref
           MatchEquals: 'refs/heads/{Branch}'
@@ -91,7 +95,7 @@ Resources:
                 Owner: !Ref GitHubOwner
                 Repo: !Ref RepositoryName
                 Branch: !Ref BranchName
-                OAuthToken: 'a2607a30646c3bad9dd2559e6a16eaece69b73c3'
+                OAuthToken: 'c8caf6fbcfbaa549ac80cfea77b8af5c2d84e117'
                 PollForSourceChanges: false
               RunOrder: 1
         - Name: Beta
@@ -108,7 +112,7 @@ Resources:
                 ActionMode: CREATE_UPDATE
                 StackName: deploy10-stack
                 RoleArn: !GetAtt [CodePipelineServiceRole, Arn]
-                TemplatePath: deploy10-stack::template.yaml
+                TemplatePath: SourceOutput::template.yaml
                 ParameterOverrides: |
                   {
                     "ImageVersion": { "Fn:GetParam": [ "SourceOutput", "imageManifest.json", "image_version" ] }
