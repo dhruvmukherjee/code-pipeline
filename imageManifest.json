@@ -1,5 +1,6 @@
-{
-  "image_id": "docker.pkg.github.com/my-org/my-repo/my-app",
-  "image_version": "1.0.16",
-  "roll_name": "dodoRoleTest"
-}
+[
+	{
+		"ParameterKey": "RoleName",
+  		"ParameterValue": "dodoRoleTest"
+	}
+]
