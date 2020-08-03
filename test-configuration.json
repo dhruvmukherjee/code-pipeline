@@ -1,0 +1,8 @@
+{
+  "Parameters" : {
+    "ImageVersion": "1.0.14"
+  },
+  "Tags" : {
+    "Department" : "Marketing"
+  }
+}
