@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Manages companies, users, groups, etc.
 Parameters:
   RoleName:
-    Default: testRoleParameter
+    Default: testDhruvRoleParameter
     Description: My Role
     Type: String
     ConstraintDescription: Must begin with a letter and contain only alphanumeric characters.
