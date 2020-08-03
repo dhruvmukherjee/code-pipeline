@@ -62,7 +62,7 @@ Resources:
     Properties:
       Authentication: GITHUB_HMAC
       AuthenticationConfiguration:
-        SecretToken: 'c8caf6fbcfbaa549ac80cfea77b8af5c2d84e117'
+        SecretToken: '64bfcc0339d57ca4f696ca844e8fbc4e82b11d0f'
       Filters:
         - JsonPath: $.ref
           MatchEquals: 'refs/heads/{Branch}'
@@ -95,7 +95,7 @@ Resources:
                 Owner: !Ref GitHubOwner
                 Repo: !Ref RepositoryName
                 Branch: !Ref BranchName
-                OAuthToken: 'c8caf6fbcfbaa549ac80cfea77b8af5c2d84e117'
+                OAuthToken: '64bfcc0339d57ca4f696ca844e8fbc4e82b11d0f'
                 PollForSourceChanges: false
               RunOrder: 1
         - Name: Beta
