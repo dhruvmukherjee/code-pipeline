@@ -1,6 +1,11 @@
 {
   "Parameters" : {
-    "ImageVersion": "1.0.14"
+    "ImageVersion": "1.0.14",
+    "BranchName": "master",
+    "RepositoryName": "code-pipeline",
+    "GitHubOwner": "dhruvmukherjee",
+    "ApplicationName": "DemoApplication",
+    "BetaFleet": "DemoFleet"
   },
   "Tags" : {
     "Department" : "Marketing"
