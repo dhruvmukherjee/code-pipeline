@@ -25,3 +25,10 @@ Resources:
         ManagedPolicyArns:
           - arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess
           - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+Outputs:
+  StackARole:
+    Description: RoleOutput
+    Value: !Ref lambdaRole
+    Export:
+      Name: StackARole
