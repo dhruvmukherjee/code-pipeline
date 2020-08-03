@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Manages companies, users, groups, etc.
+Parameters:
+  RoleName:
+    Default: testDhruvRoleParameter
+    Description: My Role
+    Type: String
+    ConstraintDescription: Must begin with a letter and contain only alphanumeric characters.
+Resources:
+  lambdaRole:
+    Type: 'AWS::IAM::Role'
+    DeletionPolicy: "Retain"
+    Properties:
+        RoleName: !Ref RoleName
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action:
+                - 'sts:AssumeRole'
+        Path: /
+        ManagedPolicyArns:
+          - arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess
+          - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
