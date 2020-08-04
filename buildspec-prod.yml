@@ -18,7 +18,6 @@ phases:
       #- serverless deploy --stage test -v
       - mkdir artifacts
       - mkdir artifacts/prod
-      - serverless package --package artifacts/prod --stage prod -v
 
   post_build:
     commands:
